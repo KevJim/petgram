@@ -25,13 +25,3 @@ export const Img = styled.img`
   top: 0;
   width: 100%;
 `;
-
-export const Button = styled.button`
-  color: #33b1ff;
-  display: flex;
-  align-items: center;
-  padding-top: 8px;
-  & svg {
-    margin-right: 4px;
-  }
-`;
