@@ -4,9 +4,7 @@ import "../../styles/Loader.css";
 
 const Loader = () => {
   return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "100px" }}
-    >
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="lds-ripple">
         <div></div>
         <div></div>
