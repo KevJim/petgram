@@ -3,6 +3,7 @@ import Context from "../Context";
 import { UserForm } from "../components/UserForm";
 import { useRegisterMutation } from "../container/RegisterMutation";
 import { useLoginMutation } from "../container/LoginMutation";
+import { Redirect } from "@reach/router";
 
 export const NotRegisteredUser = () => {
   const [form, setForm] = useState(false);
@@ -22,13 +23,19 @@ export const NotRegisteredUser = () => {
         const onSubmit = ({ email, password }) => {
           const input = { email, password };
           const variables = { input };
-          registerMutation({ variables }).then(activateAuth);
+          registerMutation({ variables }).then(({ data }) => {
+            const { signup } = data;
+            activateAuth(signup);
+          });
         };
 
         const onLogin = ({ email, password }) => {
           const input = { email, password };
           const variables = { input };
-          loginMutation({ variables }).then(activateAuth);
+          loginMutation({ variables }).then(({ data }) => {
+            const { login } = data;
+            activateAuth(login);
+          });
         };
 
         return (

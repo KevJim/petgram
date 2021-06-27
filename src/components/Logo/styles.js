@@ -4,5 +4,5 @@ export const Svg = styled.svg`
   width: 220px;
   margin-left: -10px;
   margin-top: -30px;
-  margin-bottom: -25px;
+  margin-bottom: -40px;
 `;
